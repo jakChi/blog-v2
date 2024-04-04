@@ -1,22 +1,26 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Blog() {
   return (
-    <div className="my-24 text-lg">
-      <Link href={"/"}>go to home page</Link>
-      <div
-        id="blog-container"
-        className="bg-gray-900 text-white shadow-xl rounded-lg p-4 container group transition-all duration-400"
-      >
-        <h2 id="blog-name" className="text-lg font-extrabold mb-4">
-          name bla bla bla
+    <div className="my-24">
+      <div id="blog-container">
+        <Image
+          src="https://i.pinimg.com/564x/12/b6/5f/12b65f8666b9fe5483944c06536927b9.jpg"
+          width={500}
+          height={100}
+          alt="cover"
+        />
+        <h2 id="blog-name" className="">
+          name
         </h2>
-        <div className="text-sm mb-4 line-clamp-2 group-hover:line-clamp-none">
+        <div id="blog-content" className="">
           <div dangerouslySetInnerHTML={{ __html: <div>bla</div> }} />
+          {/*ეს არის სპეციალური ფორმატერისთვის ჩვენი ჩაწერილი ტექსტი პირდაპირ html-ის ელემენტებად რო ჩასვას */}
         </div>
-        <div className="flex justify-between items-end">
-          <h5 className="text-xs text-gray-400">date</h5>
-          <h5 className="text-xs text-gray-400">
+        <div id="blog-details" className="">
+          <h5 className="">{Date.now()}</h5>
+          <h5 className="">
             ავტორი: <span>author</span>
           </h5>
         </div>
