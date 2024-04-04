@@ -1,7 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+
+  const currentPath = usePathname();
+
   return (
     <nav className="bg-gray-200 dark:bg-gray-800 fixed top-0 left-0 w-screen h-16 sm:h-20 flex justify-between">
       <div className="w-3/4 flex">
@@ -9,15 +15,25 @@ export default function Navbar() {
           <Link
             href="/"
             rel="noreferrer"
-            className="text-xl sm:text-5xl font-bold"
+            className={`text-xl sm:text-5xl font-bold`}
           >
             NIKUSHA BLOG
           </Link>
         </header>
-        <Link href="/" className="text-xl font-mono m-6 underline">
+        <Link
+          href="/"
+          className={`text-xl font-mono m-6 underline ${
+            currentPath == "/" ? "text-blue-600" : null
+          }`}
+        >
           Home
         </Link>
-        <Link href="/blogs" className="text-xl font-mono m-6 underline">
+        <Link
+          href="/blogs"
+          className={`text-xl font-mono m-6 underline ${
+            currentPath.includes("/blogs") ? "text-blue-600" : null
+          }`}
+        >
           Blogs
         </Link>
       </div>
