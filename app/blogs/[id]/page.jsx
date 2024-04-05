@@ -17,7 +17,7 @@ export default async function BlogPage({ params }) {
 
   return (
     <div className="mt-24">
-      <Image src={sydPic} width={200} height={200} alt="sydney sweeney" />
+      <Image src={blog.avatar} width={200} height={200} alt="sydney sweeney" />
       <h1>
         <span>{blog.id}. </span>
         {blog.name}
