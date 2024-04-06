@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-
   const currentPath = usePathname();
 
   return (
@@ -17,7 +16,7 @@ export default function Navbar() {
             rel="noreferrer"
             className={`text-xl sm:text-5xl font-bold`}
           >
-            NIKUSHA BLOG
+            BLOG
           </Link>
         </header>
         <Link
