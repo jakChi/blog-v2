@@ -1,22 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function BlogCard({ blog }) {
+export default function BlogCard({ blog, user }) {
   return (
-    <Link href={`/blogs/${blog.id}`} className="w-1/3 border">
+    <div className="w-1/3 border">
       <Image
-        src={blog.avatar}
+        src={blog.blogPic}
         alt="blog preview"
         width={200}
         height={200}
         className="w-64 h-44 object-cover m-auto"
       />
       <div id="details">
-        <h2 id="blog-name">{blog.name + blog.createdAt}</h2>
+        <Link href={`/blogs/${blog.id}`}>
+          <h2 id="blog-name">{blog.name}</h2>
+        </Link>
         <p id="blog-content">{blog.content}</p>
         <p id="blog-date">{blog.createdAt}</p>
-        <p id="blog-author">{blog.name}</p>
+        <Link id="blog-author" href={`/users`}>
+          {blog.userName}
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }

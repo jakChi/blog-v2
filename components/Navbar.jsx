@@ -35,17 +35,24 @@ export default function Navbar() {
         >
           Blogs
         </Link>
+        <Link
+          href="/users"
+          className={`text-xl font-mono m-6 underline ${
+            currentPath.includes("/users") ? "text-blue-600" : null
+          }`}
+        >
+          Users
+        </Link>
       </div>
       <div className="group w-1/4 flex justify-end">
-        <Link href="/profile">
+        <Link href="/user">
+          {/*როგორმე შესაძლებელია რო პროფილის ფეიჯიდან ავიტანო უზერის დეტალები ნავბარში. ფოტო მაგალითად */}
           <Image
             width={100}
             height={100}
             className="cursor-pointer h-16 w-16 m-2 border-2 border-black rounded-full object-cover"
-            src={
-              "https://celebmafia.com/wp-content/uploads/2021/08/sydney-sweeney-photoshoot-august-2021-9.jpg"
-            }
-            alt="პროფილის ფოტო"
+            src={""}
+            alt="user profile picture"
           />
         </Link>
 

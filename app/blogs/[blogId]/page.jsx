@@ -1,6 +1,4 @@
 import Image from "next/image";
-const sydPic =
-  "https://celebmafia.com/wp-content/uploads/2021/08/sydney-sweeney-photoshoot-august-2021-9.jpg";
 
 async function getBlog(blogId) {
   const res = await fetch(
@@ -12,12 +10,12 @@ async function getBlog(blogId) {
 }
 
 export default async function BlogPage({ params }) {
-  const blog = await getBlog(params.id);
+  const blog = await getBlog(params.blogId);
   console.log("blog");
 
   return (
     <div className="mt-24">
-      <Image src={blog.avatar} width={400} height={200} alt="sydney sweeney" />
+      <Image src={blog.blogPic} width={400} height={200} alt="blog cover" />
       <h1>
         <span>{blog.id}. </span>
         {blog.name}
