@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
 export default function Navbar() {
   const currentPath = usePathname();
 
@@ -11,35 +10,29 @@ export default function Navbar() {
     <nav className="navbar navbar-light bg-light justify-content-between">
       <div className="">
         <header className="">
-          <Link
-            href="/"
-            rel="noreferrer"
-            className=""
-          >
+          <Link href="/" rel="noreferrer" className="">
             BLOG
           </Link>
         </header>
-        <Link
-          href="/"
-          className=""
-        >
+        <Link href="/" className="">
           Home
         </Link>
-        <Link
-          href="/blogs"
-          className=""
-        >
+        <Link href="/blogs" className="">
           Blogs
+        </Link>
+        <Link href="/users" className="">
+          Users
         </Link>
       </div>
       <div className="">
-        <Link href="/profile">
+        <Link href="/users">
           <Image
             width={100}
             height={100}
             className="cursor-pointer h-16 w-16 m-2 border-2 border-black rounded-full object-cover"
-            src={"https://celebmafia.com/wp-content/uploads/2021/08/sydney-sweeney-photoshoot-august-2021-9.jpg"}
-            alt="პროფილის ფოტო" />
+            src={""}
+            alt="current user"
+          />
         </Link>
 
         {/* telefonistvis aseti ragac sheileba
