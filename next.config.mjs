@@ -6,6 +6,7 @@ const nextConfig = {
       "i.pinimg.com",
       "cloudflare-ipfs.com",
       "loremflickr.com",
+      "s.gravatar.com",
     ],
   },
 };
