@@ -29,3 +29,10 @@ export default function Home() {
     </main>
   );
 }
+
+$("#night").on("click", function() {
+  $("body").css({
+    "background-color": "#000",
+    "color": "white",
+  });
+});

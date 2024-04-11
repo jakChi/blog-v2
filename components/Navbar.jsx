@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import $ from 'jquery';
 
 
 export default function Navbar() {
@@ -9,8 +10,8 @@ export default function Navbar() {
 
   return (
     <nav className="navbar navbar-light bg-light justify-content-between">
-      <div className="">
-        <header className="">
+      <div className="d-flex mx-2 bg-light my-2">
+        <header className="fw-bolder ms-2 text-primary">
           <Link
             href="/"
             rel="noreferrer"
@@ -21,32 +22,15 @@ export default function Navbar() {
         </header>
         <Link
           href="/"
-          className=""
+          className="mx-3"
         >
           Home
         </Link>
-        <Link
-          href="/blogs"
-          className=""
-        >
-          Blogs
-        </Link>
       </div>
-      <div className="">
-        <Link href="/profile">
-          <Image
-            width={100}
-            height={100}
-            className="cursor-pointer h-16 w-16 m-2 border-2 border-black rounded-full object-cover"
-            src={"https://celebmafia.com/wp-content/uploads/2021/08/sydney-sweeney-photoshoot-august-2021-9.jpg"}
-            alt="პროფილის ფოტო" />
-        </Link>
-
-        {/* telefonistvis aseti ragac sheileba
-            <div className="bg-gray-200 dark:bg-gray-800 absolute -right-full group-hover:right-0 top-0 w-60 h-screen transition-all duration-300 sm:delay-300">
-              <UserInfo user={user} auth={auth} setUser={setUser} />
-              userInfo must be here
-            </div> */}
+      <div className="d-flex">
+        <Link href="#" className="bg-success p-2 rounded-lg">Log In</Link>
+        <Link href="#" className="bg-warning p-2 mx-2">Sign Up</Link>
+        <div className="d-inline align-middle mt-1 ms-3 me-2"><Link id="night" href="/"><Image className="align-middle" src="https://cdn-icons-png.flaticon.com/512/5261/5261906.png" width="30" height="30" alt="Night Mode icon"></Image></Link></div>
       </div>
     </nav>
   );
