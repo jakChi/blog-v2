@@ -24,15 +24,29 @@ export default function Navbar() {
         </Link>
         <Link
           href="/users"
-          className={`${currentPath.includes("/users") ? " tw-text-purple-600" : null}`}
+          className={`${
+            currentPath.includes("/users") ? " tw-text-purple-600" : null
+          }`}
         >
           Users
         </Link>
       </div>
-      <div>
-        <Link href={"/api/auth/login"}>login</Link>
-      </div>
-      <div className="">
+      <div className="w-50 d-inline align-middle mt-1 ms-3 me-2">
+        <Link href={"/api/auth/login"} className="bg-success p-2 rounded-lg">
+          Log In
+        </Link>
+        <Link href="#" className="bg-warning p-2 mx-2">
+          Sign Up
+        </Link>
+        <Link id="night" href="/">
+          <Image
+            className="align-middle"
+            src="https://cdn-icons-png.flaticon.com/512/5261/5261906.png"
+            width="30"
+            height="30"
+            alt="Night Mode icon"
+          ></Image>
+        </Link>
         {user && (
           <Link href="/users/me">
             <Image
@@ -44,13 +58,15 @@ export default function Navbar() {
             />
           </Link>
         )}
+      </div>
 
-        {/* telefonistvis aseti ragac sheileba
+      {/* <div className="">
+        telefonistvis aseti ragac sheileba
             <div className="bg-gray-200 dark:bg-gray-800 absolute -right-full group-hover:right-0 top-0 w-60 h-screen transition-all duration-300 sm:delay-300">
               <UserInfo user={user} auth={auth} setUser={setUser} />
               userInfo must be here
-            </div> */}
-      </div>
+            </div>
+      </div> */}
     </nav>
   );
 }
