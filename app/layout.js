@@ -14,8 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+      </head>
+      <body className={inter.className}>
         <Navbar />
         {children}
         {/* <Footer /> */}
