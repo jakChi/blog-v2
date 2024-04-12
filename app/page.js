@@ -1,14 +1,16 @@
-"use client";
+"use client"
 
 import BlogCard from "@/components/Blog-card";
 import { useEffect, useState } from "react";
 import $ from "jquery";
-
-export const BLOG_API = "https://660e6f836ddfa2943b36c78e.mockapi.io/api/v2/blogs";
-export const USER_API = "https://660e6f836ddfa2943b36c78e.mockapi.io/api/v2/users";
+import { useState, useEffect } from "react";
+export const BLOG_API =
+  "https://660e6f836ddfa2943b36c78e.mockapi.io/api/v2/blogs";
+export const USER_API =
+  "https://660e6f836ddfa2943b36c78e.mockapi.io/api/v2/users";
 
 export default function Home() {
-  const [popularBlogs, setPopularBlogs] = useState([]);
+  const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
     fetch(BLOG_API)
@@ -25,16 +27,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="mt-24">
-      <section>
-        <h1>most popular blogs</h1>
-        <div className="flex">
-          {popularBlogs.map((blog, idx) => (
-            <BlogCard blog={blog} key={idx} />
-          ))}
-        </div>
-      </section>
-    </main>
+    <section>
+      <h1>Most Popular Blogs</h1>
+      <div className="flex">
+        {blogs.map((blog, idx) => (
+          <BlogCard blog={blog} key={idx} />
+        ))}
+      </div>
+    </section>
   );
 }
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function BlogCard({ blog, user }) {
+export default function BlogCard({ blog }) {
   return (
     <div className="w-1/3 border">
       <Image

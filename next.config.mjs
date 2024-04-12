@@ -8,6 +8,7 @@ const nextConfig = {
       "loremflickr.com",
       "icons8.com",
       "cdn-icons-png.flaticon.com",
+      "s.gravatar.com",
     ],
   },
 };
