@@ -1,6 +1,8 @@
 "use client"
 
 import BlogCard from "@/components/Blog-card";
+import { useEffect, useState } from "react";
+import $ from "jquery";
 import { useState, useEffect } from "react";
 export const BLOG_API =
   "https://660e6f836ddfa2943b36c78e.mockapi.io/api/v2/blogs";
@@ -11,18 +13,18 @@ export default function Home() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    const getBlogs = async () => {
-      try {
-        const response = await fetch(BLOG_API);
-        const data = await response.json();
-        setBlogs(data);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-      }
-    };
+    fetch(BLOG_API)
+      .then((res) => res.json())
+      .then((data) => data.filter((blog, idx) => blog.id === "5" || blog.id == "6"))
+      .then((filtered) => setPopularBlogs(filtered));
 
-    getBlogs();
-  }, []); // Empty dependency array to ensure useEffect runs only once
+      $("#night").on("click", function() {
+        $("body").css({
+          "background-color": "#000",
+          "color": "red",
+        });
+      });
+  }, []);
 
   return (
     <section>
@@ -35,3 +37,5 @@ export default function Home() {
     </section>
   );
 }
+
+
