@@ -1,3 +1,5 @@
+"use client";
+
 import BlogCard from "@/components/Blog-card";
 import $ from "jquery";
 import { useState, useEffect } from "react";
