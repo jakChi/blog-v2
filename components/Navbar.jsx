@@ -25,7 +25,7 @@ export default function Navbar() {
         <Link
           href="/blogs"
           className={`${
-            currentPath.includes("/users") ? " tw-text-purple-600" : null
+            currentPath.includes("/blogs") ? " tw-text-purple-600" : null
           }`}
         >
           Blogs
