@@ -23,15 +23,15 @@ export default function Navbar() {
           Home
         </Link>
         <Link
-          href="/users"
+          href="/blogs"
           className={`${
             currentPath.includes("/users") ? " tw-text-purple-600" : null
           }`}
         >
-          Users
+          Blogs
         </Link>
       </div>
-      <div className="w-50 d-inline align-middle mt-1 ms-3 me-2">
+      <div className="w-25 d-flex tw-justify-around mt-1 ms-3 me-2">
         <Link href={"/api/auth/login"} className="bg-success p-2 rounded-lg">
           Log In
         </Link>
