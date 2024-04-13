@@ -33,3 +33,4 @@ Open Graph Image and Twitter Image: Define images for social sharing and preview
 robots.txt: Control web crawlers’ access to your site.
 sitemap.xml: Specify the structure of your site for search engines.
 Remember that metadata plays a crucial role in enhancing user experience and search engine optimization. By following these conventions, you can ensure that your Next.js app provides the right information to users and search engines alike.
+# blog-v2
